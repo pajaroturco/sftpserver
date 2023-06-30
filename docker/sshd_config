@@ -1,0 +1,29 @@
+ChallengeResponseAuthentication no
+UsePAM no
+PrintMotd no
+X11Forwarding no
+AllowTcpForwarding no
+AllowAgentForwarding no
+PermitTunnel no
+ForceCommand internal-sftp
+PermitRootLogin no
+PermitEmptyPasswords no
+PasswordAuthentication no
+PubkeyAuthentication yes
+AuthenticationMethods publickey
+ClientAliveInterval 300
+ClientAliveCountMax 2
+MaxAuthTries 3
+MaxSessions 3
+Subsystem sftp internal-sftp -u 026
+SyslogFacility AUTH
+LogLevel DEBUG
+ 
+Match Group sftp
+    ChrootDirectory %h/files
+    X11Forwarding no
+    AllowTcpForwarding no
+    AllowAgentForwarding no
+    PermitTunnel no
+    ForceCommand internal-sftp 
+    

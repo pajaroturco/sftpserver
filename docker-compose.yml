@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+    server:
+        build:
+            context: ./docker
+            args:
+                SSH_MASTER_USER: ${SSH_MASTER_USER}
+                SSH_MASTER_PASS: ${SSH_MASTER_PASS}
+                DEBIAN_VERSION: ${DEBIAN_VERSION}
+        hostname: server
+        ports:
+            - "${SSH_MASTER_PORT}:22"
+        volumes:
+            - ./authorized_keys:/uploads/${SSH_MASTER_USER}/.ssh/authorized_keys
+            - ./upload:/uploads/${SSH_MASTER_USER}/upload
