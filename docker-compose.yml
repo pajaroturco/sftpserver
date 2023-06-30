@@ -1,5 +1,9 @@
 version: '3'
 
+volumes:
+    server:
+        driver: ${VOLUMES_DRIVER}
+
 services:
     server:
         build:
