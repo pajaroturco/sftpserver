@@ -1,7 +1,7 @@
 version: '3'
 
 volumes:
-    server:
+    sftp-server:
         driver: ${VOLUMES_DRIVER}
 
 services:
