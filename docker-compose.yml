@@ -5,7 +5,7 @@ volumes:
         driver: ${VOLUMES_DRIVER}
 
 services:
-    server:
+    sftp-server:
         build:
             context: ./docker
             args:
